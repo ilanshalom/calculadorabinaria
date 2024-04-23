@@ -7,19 +7,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Calculadora Binária</h1>
-    <form action="/calcular" method="post">
-        <label for="num1">Número 1 (binário):</label>
-        <input type="text" name="num1" id="num1" required>
-        <label for="num2">Número 2 (binário):</label>
-        <input type="text" name="num2" id="num2" required>
-        <label for="operacao">Operação:</label>
-        <select name="operacao" id="operacao">
-            <option value="soma">Soma</option>
-            <option value="subtracao">Subtração</option>
-            <option value="multiplicacao">Multiplicação</option>
-        </select>
-        <button type="submit">Calcular</button>
-    </form>
+    <main>
+        <div class="box">
+            <h1>Calculadora Binária</h1>
+            <form action="/calcular" method="post">
+                <label for="num1">1° Número</label>
+                <input type="text" name="num1" id="num1" required>
+
+                <label for="num2">2° Número</label>
+                <input type="text" name="num2" id="num2" required>
+
+                <label for="operacao">Operação</label>
+                <select name="operacao" id="operacao">
+                    <option value="soma">Soma</option>
+                    <option value="subtracao">Subtração</option>
+                    <option value="multiplicacao">Multiplicação</option>
+                </select>
+                <br>
+                <button type="submit">Calcular</button>
+                <label id="resultado">Resultado: {{ resultado }}</label>
+            </form>
+        </div>
+    </main>
 </body>
 </html>
